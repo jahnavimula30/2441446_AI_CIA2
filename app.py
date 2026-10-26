@@ -12,7 +12,7 @@ import streamlit as st
 
 from questions import POINTS, QUESTIONS, TOPICS
 
-st.set_page_config(page_title="AI Game Arena", page_icon="🧠", layout="centered")
+st.set_page_config(page_title="AI Quiz", page_icon="🧠", layout="centered")
 
 BY_ID = {q["id"]: q for q in QUESTIONS}
 LB_FILE = os.path.join("data", "leaderboard.csv")
