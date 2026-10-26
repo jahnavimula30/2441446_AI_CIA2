@@ -1,4 +1,4 @@
-"""AI Game Arena: DSC401-6 Artificial Intelligence (Units I & II).
+"""AI Quiz Game: DSC401-6 Artificial Intelligence (Units I & II).
 
 Run locally:  streamlit run app.py
 """
@@ -12,7 +12,7 @@ import streamlit as st
 
 from questions import POINTS, QUESTIONS, TOPICS
 
-st.set_page_config(page_title="AI Quiz", page_icon="🧠", layout="centered")
+st.set_page_config(page_title="AI Quiz Game", page_icon="🧠", layout="centered")
 
 BY_ID = {q["id"]: q for q in QUESTIONS}
 LB_FILE = os.path.join("data", "leaderboard.csv")
@@ -205,7 +205,7 @@ def save_score(total, maxp):
 # ───────────────────────────── pages ─────────────────────────────
 def render_setup():
     st.markdown(CSS, unsafe_allow_html=True)
-    st.title("Welcome to AI Game Arena")
+    st.title("Welcome to AI Quiz Game")
     st.markdown('<div class="hero"><h3>🎮 Test your Artificial Intelligence skills!</h3>'
                 '<p>Battle through questions on agents, search algorithms, heuristics, CSPs and more. '
                 'Earn XP, use lifelines, beat the clock and climb the leaderboard.</p></div>', unsafe_allow_html=True)
@@ -392,7 +392,7 @@ def render_bank():
 def render_about():
     st.title("ℹ️ About")
     st.markdown(f"""
-**AI Game Arena** is an interactive quiz game for *DSC401-6 Artificial Intelligence, Units I & II*, built with
+**AI Quiz Game** is an interactive quiz game for *DSC401-6 Artificial Intelligence, Units I & II*, built with
 Python and Streamlit.
 
 - **{len(QUESTIONS)} questions** across {len(TOPICS)} topics, in 7 formats: MCQ, True/False, Assertion-Reason,
@@ -405,7 +405,7 @@ Python and Streamlit.
 
 # ───────────────────────────── main ─────────────────────────────
 init_state()
-st.sidebar.title("🎮 AI Game Arena")
+st.sidebar.title("🎮 AI Quiz Game")
 page = st.sidebar.radio("Menu", ["🎮 Play", "🏆 Hall of Fame", "📚 Question Bank", "ℹ️ About"])
 if st.session_state.stage == "quiz":
     st.sidebar.button("🚪 Quit current quiz", on_click=reset_game)
